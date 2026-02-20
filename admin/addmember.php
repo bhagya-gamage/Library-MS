@@ -7,7 +7,23 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
-// Add member logic 
+// Add member logic
+if(isset($_POST['add_member'])) {
+    $name=$_POST['name'];
+    $email= $_POST['email'];
+
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+    $role = 'member' ;
+
+    $stmt =$conn-> prepare("INSERT INTO users(name,email,password,role)VALUES(?,?,?,?)");
+    $stmt->bind_param("ssss",$name, $password ,$role);
+
+    if($stmt->execute()){
+        echo"<script>alert('Member Registered Successfully!);window.location ='viewmember.php';</script>";
+    }else{
+        $error= "Error: Emailmight already exist.";
+    }
+}
 ?>
 
 
@@ -35,8 +51,22 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 
     <div class="main-content">
         <h2>Add New Member</h2>
+        <?php if(isset($error)) echo "<p class = 'error'>$error</p>";?>
 
         <!--  Form + insert logic -->
+        <form method="POST">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter Full Name" required>
+
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Enter Email" required>
+
+            <label>Temporary Password</label>
+            <input type="password" name="password" placeholder="Create Password" required>
+
+            <button types="submit"name="add_member">Register Member</button>
+        </form>
+
 
     </div>
 </div>
