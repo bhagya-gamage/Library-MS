@@ -23,13 +23,15 @@ $result = $conn->query("SELECT * FROM books");
 <html>
 <head>
     <title>View Books - Admin</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="viewmember.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="sidebar.css">
     <script src="../script.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="sidebar">
-        <h2>LMS Admin</h2>
+        <h2>BookFlow LMS Admin</h2>
         <a href="dashboard.php">🏠 Dashboard</a>
         <a href="addbook.php">➕ Add Book</a>
         <a href="viewbook.php" class="active">📚 View Books</a>
@@ -41,7 +43,7 @@ $result = $conn->query("SELECT * FROM books");
     </div>
 
     <div class="main-content">
-        <h2>Book List</h2>
+        <h1>Book List</h1>
         <table>
             <thead>
                 <tr>
@@ -68,7 +70,7 @@ $result = $conn->query("SELECT * FROM books");
                         <a href="viewbook.php?delete=<?php echo $row['id']; ?>" 
                            onclick="return confirmDelete()" 
                            style="color:red; text-decoration: none; font-weight: bold;">
-                           Delete
+                           🗑 Delete
                         </a>
                     </td>
                 </tr>

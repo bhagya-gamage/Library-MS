@@ -1,0 +1,152 @@
+/* ===== Main Content Styling for View Books ===== */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #0f2a55;
+    font-weight: 600;
+    position: relative;
+}
+
+.main-content h2::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(to right, #1e90ff, #00c6ff);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 10px;
+}
+
+/* ===== Table Styling ===== */
+/* table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: white;
+}
+
+thead {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background: #f8fbff;
+}
+
+tr:hover {
+    background: rgba(30,144,255,0.08);
+    transition: 0.3s;
+}
+
+td a {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.25s;
+}
+
+td a:first-child {
+    color: #3498db; 
+}
+
+td a:first-child:hover {
+    background: rgba(52,152,219,0.1);
+}
+
+td a:last-child {
+    color: #e74c3c; 
+}
+
+td a:last-child:hover {
+    background: rgba(231,76,60,0.1);
+}
+ */
+
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+th {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    text-align: left;
+    background: white; 
+}
+
+table tr:nth-child(even) td {
+    background: #f8fbff;
+}
+
+table tr:hover td {
+    background: rgba(30, 60, 114, 0.06);
+    transition: 0.3s;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.error { color: #e74c3c; font-weight: 500; }
+.success { color: #2ecc71; font-weight: 500; }
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px 12px;
+    }
+}
+
+/* Optional subtle shadow for the table container */
+.main-content table {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add gradient background behind table */
+.main-content {
+    background: linear-gradient(135deg, rgba(30,144,255,0.05), rgba(0,198,255,0.05));
+    border-radius: 20px;
+    padding: 30px;
+}
