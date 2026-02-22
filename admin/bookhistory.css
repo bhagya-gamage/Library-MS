@@ -1,0 +1,142 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #eef2f7, #dfe9f3);
+    color: #2c3e50;
+}
+
+/* Page Title */
+.main-content h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Title underline (same theme colors) */
+.main-content h2::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    display: block;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+
+/* History Table Container Feel */
+.main-content table {
+    width: 100%;
+    max-width: 1100px;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Header */
+.main-content table tr:first-child {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+}
+
+.main-content th {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 16px 18px;
+    text-align: left;
+    letter-spacing: 0.4px;
+}
+
+/* Table Cells */
+.main-content td {
+    padding: 15px 18px;
+    font-size: 14.5px;
+    color: #2c3e50;
+    border-bottom: 1px solid #eef2f7;
+}
+
+/* Row Alternating Color */
+.main-content tr:nth-child(even) td {
+    background: #f8fbff;
+}
+
+/* Row Hover Effect (matches theme) */
+.main-content tr:hover td {
+    background: rgba(52, 152, 219, 0.08);
+    transition: 0.25s ease;
+}
+
+/* Status Colors */
+.main-content td span {
+    font-weight: 600;
+}
+
+/* Return Button Styling */
+.main-content td a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    color: white;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+/* Return Hover */
+.main-content td a:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Completed Text */
+.main-content td:last-child {
+    font-weight: 500;
+    color: #7f8c8d;
+}
+
+/* Make table responsive */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 30px 20px;
+    }
+
+    .main-content table {
+        font-size: 14px;
+    }
+
+    .main-content th,
+    .main-content td {
+        padding: 12px;
+    }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("../assets/last2.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(4px); /* Adjust blur level (4px–10px) */
+    z-index: -1;
+}
