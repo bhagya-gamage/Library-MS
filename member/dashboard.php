@@ -24,7 +24,7 @@ $books = $conn->query("SELECT * FROM books");
 
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="../style.css"></head>
+<head><link rel="stylesheet" href="dashboard.css"></head>
 <body>
 <div class="container">
     <div class="sidebar">
