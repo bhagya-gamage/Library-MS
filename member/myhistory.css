@@ -1,0 +1,135 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #eef2f7, #dfe9f3);
+    color: #2c3e50;
+}
+/* Page Title */
+.main-content h1 {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Welcome Text */
+.main-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #34495e;
+}
+
+/* Table Container Card Effect */
+.main-content table {
+    width: 100%;
+    max-width: 1100px;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Header (exact blue like your system theme) */
+.main-content thead {
+    background: linear-gradient(90deg, #3f8ec2, #3f8ec2);
+}
+
+.main-content th {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 16px 18px;
+    text-align: left;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.main-content th:last-child {
+    border-right: none;
+}
+
+/* Table Body Cells */
+.main-content td {
+    padding: 16px 18px;
+    font-size: 15px;
+    color: #2c3e50;
+    border-bottom: 1px solid #e6ecf2;
+    background: #ffffff;
+}
+
+/* Alternate Rows (like screenshot grey rows) */
+.main-content tbody tr:nth-child(even) td {
+    background: #f2f4f7;
+}
+
+/* Hover Effect (soft blue) */
+.main-content tbody tr:hover td {
+    background: rgba(63, 142, 194, 0.08);
+    transition: 0.3s ease;
+}
+
+/* Status Colors */
+.main-content span {
+    font-weight: 600;
+}
+
+/* Returned = Green (matches image) */
+.main-content span[style*="2ecc71"] {
+    color: #2ecc71 !important;
+}
+
+/* Issued = Orange */
+.main-content span[style*="e67e22"] {
+    color: #e67e22 !important;
+}
+
+/* Empty row message styling */
+.main-content td[colspan="5"] {
+    text-align: center;
+    padding: 25px;
+    font-weight: 500;
+    color: #7f8c8d;
+    background: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .main-content {
+        padding: 25px;
+    }
+
+    .main-content table {
+        font-size: 14px;
+    }
+
+    .main-content th,
+    .main-content td {
+        padding: 12px;
+    }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("../assets/last2.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(4px); /* Adjust blur level (4px–10px) */
+    z-index: -1;
+}

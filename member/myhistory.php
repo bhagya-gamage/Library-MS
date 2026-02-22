@@ -28,7 +28,8 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <title>My Borrowing History</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="myhistory.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
