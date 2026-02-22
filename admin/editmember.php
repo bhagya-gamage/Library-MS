@@ -12,7 +12,7 @@ include '../config.php';
 <html>
 <head>
     <title>Edit Member</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="editbook.css">
 </head>
 <body>
 <div class="container">
