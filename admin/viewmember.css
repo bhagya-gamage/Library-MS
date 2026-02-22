@@ -1,0 +1,85 @@
+/* ===== View Members Page Styling ===== */
+
+/* Main Content Layout */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Page Title */
+.main-content h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #0f2a55;
+    font-weight: 600;
+    position: relative;
+}
+
+.main-content h1::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #1e90ff, #00c6ff);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 10px;
+}
+
+/* Members Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+th {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    text-align: left;
+    background: rgba(214, 214, 222, 0.97); 
+}
+
+table tr:nth-child(even) td {
+    background: #f8fbff;
+}
+
+table tr:hover td {
+    background: rgba(30, 60, 114, 0.06);
+    transition: 0.3s;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.error { color: #e74c3c; font-weight: 500; }
+.success { color: #2ecc71; font-weight: 500; }
+
+/* Background Behind Table */
+.main-content {
+    background: linear-gradient(
+        135deg,
+        rgba(30,144,255,0.05),
+        rgba(0,198,255,0.05)
+    );
+    border-radius: 20px;
+    padding: 30px;
+}

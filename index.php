@@ -28,16 +28,23 @@ if (isset($_POST['login'])) {
 
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="style.css"></head>
+<head><link rel="stylesheet" href="index.css"></head>
 <body>
 <div class="login-wrapper">
     <form method="POST">
-        <h2 style="text-align:center">Library Login</h2>
+        <h2 style="text-align:center">Welcome to<br>BookFlow LMS Login</h2>
         <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit" name="login">Login</button>
+         <div style="margin-top:25px; text-align:left; font-size:13px; background:#f8fbff; padding:15px; border-radius:10px;">
+           
+            <b>Admin:</b> admin@test.com / 12345<br>
+            <b>User:</b> useremail / userpassword
+        </div>
     </form>
 </div>
+
 </body>
 </html>
+

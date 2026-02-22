@@ -14,38 +14,67 @@ $issued = $conn->query("SELECT COUNT(*) as c FROM issued_books WHERE status='Iss
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="sidebar.css">
     <script src="../script.js"></script>
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <h2>BookFlow LMS Admin</h2>
-            <a href="dashboard.php">🏠 Dashboard</a>
-            <a href="addbook.php">➕ Add Book</a>
-            <a href="viewbook.php">📚 View Books</a>
-            <a href="addmember.php">👤 Add Member</a>
-            <a href="viewmember.php">👥 View Members</a>
-            <a href="issuebook.php">📝 Issue Book</a>
-            <a href="bookhistory.php">📜 History</a>
-            <a href="../logout.php" style="color:#e74c3c;">🚪 Logout</a>
-        </div>
-        
-        <div class="main-content">
-            <h1>Welcome, <?php echo $_SESSION['name']; ?></h1>
-            <div style="display:flex; gap:20px;">
-                <div style="background:white; padding:20px; flex:1; border-left: 5px solid #3498db;">
-                    <h3>Total Books</h3> <h1><?php echo $books; ?></h1>
-                </div>
-                <div style="background:white; padding:20px; flex:1; border-left: 5px solid #2ecc71;">
-                    <h3>Members</h3> <h1><?php echo $members; ?></h1>
-                </div>
-                <div style="background:white; padding:20px; flex:1; border-left: 5px solid #e67e22;">
-                    <h3>Issued Books</h3> <h1><?php echo $issued; ?></h1>
-                </div>
-            </div>
+<div class="container">
+
+<!-- ===== Sidebar ===== -->
+
+<?php require('sidebar.php');?>
+
+<!-- ===== Main Content ===== -->
+<div class="main-content">
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <h1>Welcome,BookFlow LMS 👋</h1>
+
+        <div class="profile">
+            <!-- <img src="https://i.pravatar.cc/150?img=3">
+            <span>Admin</span> -->
         </div>
     </div>
+
+    <!-- Dashboard Cards -->
+    <div class="cards">
+
+        <div class="card books">
+            <h3>Total Books</h3>
+            <h1><?php echo $books; ?></h1>
+        </div>
+
+        <div class="card members">
+            <h3>Total Members</h3>
+            <h1><?php echo $members; ?></h1>
+        </div>
+
+        <div class="card issued">
+            <h3>Issued Books</h3>
+            <h1><?php echo $issued; ?></h1>
+        </div>
+
+    </div>
+
+    <!-- Extra Section -->
+    <br><br>
+
+    <div style="background:white;padding:25px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+        <h2>📢 Library Tips</h2>
+        <ul>
+            <li>✔ Always return books on time.</li>
+            <li>✔ Update member details regularly.</li>
+            <li>✔ Check overdue books weekly.</li>
+            <li>✔ Backup database monthly.</li>
+        </ul>
+    </div>
+
+</div>
+
+</div>
+
 </body>
 </html>
