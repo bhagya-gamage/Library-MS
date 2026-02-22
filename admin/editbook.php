@@ -35,7 +35,7 @@ if (isset($_POST['update_book'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="editbook.css">
     <title>Edit Book</title>
 </head>
 <body>

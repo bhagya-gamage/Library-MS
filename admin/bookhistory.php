@@ -20,11 +20,14 @@ $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="../style.css"></head>
+<link rel="stylesheet" href="bookhistory.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="sidebar.css">
+</head>
 <body>
 <div class="container">
     <div class="sidebar">
-        <h2>LMS Admin</h2>
+        <h2>BookFlow LMS Admin</h2>
         <a href="dashboard.php">🏠 Dashboard</a>
         <a href="addbook.php">➕ Add Book</a>
         <a href="viewbook.php">📚 View Books</a>
@@ -36,7 +39,7 @@ $result = $conn->query($sql);
     </div>
 
     <div class="main-content">
-        <h2>Issue/Return History</h2>
+        <h1>Issue/Return History</h1>
         <table>
             <tr><th>Book</th><th>Member</th><th>Issue Date</th><th>Return Date</th><th>Status</th><th>Action</th></tr>
             <?php while($row = $result->fetch_assoc()): ?>

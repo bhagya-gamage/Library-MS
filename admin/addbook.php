@@ -19,14 +19,16 @@ if (isset($_POST['add_book'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="addbook.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <!-- <link rel="stylesheet" href="dashboard.css"> -->
     <title>Add Book</title>
 </head>
 <body>
 <div class="container">
 
     <div class="sidebar">
-        <h2>LMS Admin</h2>
+        <h2>BookFlow LMS Admin</h2>
         <a href="dashboard.php">🏠 Dashboard</a>
         <a href="addbook.php" class="active">➕ Add Book</a>
         <a href="viewbook.php">📚 View Books</a>

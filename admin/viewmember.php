@@ -32,7 +32,9 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Members</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="viewmember.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="sidebar.css">
     <script src="../script.js"></script> 
 </head>
 <body>
@@ -40,7 +42,7 @@ $result = $conn->query($sql);
 <div class="container">
     
     <div class="sidebar">
-        <h2>LMS Admin</h2>
+        <h2>BookFlow LMS Admin</h2>
         <a href="dashboard.php">🏠 Dashboard</a>
         <a href="addbook.php">➕ Add Book</a>
         <a href="viewbook.php">📚 View Books</a>
