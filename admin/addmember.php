@@ -7,23 +7,29 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
-// 2. Process Form Submission
+//  Form Submission
 if (isset($_POST['add_member'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    // Hash the password for security before saving
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $role = 'member';
+    $rawPassword = $_POST['password'];
 
-    // Use Prepared Statements to prevent SQL Injection
-    $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $email, $password, $role);
-    
-    if ($stmt->execute()) {
-        echo "<script>alert('Member Registered Successfully!'); window.location='viewmember.php';</script>";
+    // validation 
+    if (strlen($rawPassword) <= 5) {
+        $error = "Password must be more than 5 characters!";
     } else {
-        // Handle duplicate email error
-        $error = "Error: Email might already exist.";
+
+        // Only runs if password is valid
+        $password = password_hash($rawPassword, PASSWORD_DEFAULT);
+        $role = 'member';
+
+        $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $name, $email, $password, $role);
+
+        if ($stmt->execute()) {
+            echo "<script>alert('Member Registered Successfully!'); window.location='viewmember.php';</script>";
+        } else {
+            $error = "Error: Email might already exist.";
+        }
     }
 }
 ?>
@@ -52,7 +58,7 @@ if (isset($_POST['add_member'])) {
             <input type="email" name="email" placeholder="Enter Email" required>
             
             <label>Temporary Password</label>
-            <input type="password" name="password" placeholder="Create Password" required>
+            <input type="password" name="password" placeholder="Create Password" minlength="6" required>
             
             <button type="submit" name="add_member">Register Member</button>
         </form>
